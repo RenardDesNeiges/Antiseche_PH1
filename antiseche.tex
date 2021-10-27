@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{epigraph} %quotes
+\usepackage{amssymb} %math symbols
+\usepackage{mathtools} %more math stuff
+\usepackage{amsthm} %theorems, proofs and lemmas
+\usepackage[ruled,vlined]{algorithm2e} %algoritms/pseudocode
+
+\usepackage[french]{babel}
+
+%% Theorem notation
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{problem}{Problem}[section]
+
+%% declaring abs so that it works nicely
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+% Marges
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=5.5in
+\textheight=9.0in
+\headsep=0.5in
+
+
+\title{Antisèche pour le cours de mécanique newtonienne}
+\date{\today}
+\author{Titouan Renard}
+
+\begin{document}
+\maketitle	
+
+
+\section{Marche à suivre pour résoudre un exercice}
+
+\begin{enumerate}
+    \item Lire la donnée (attentivement)
+    \item Mettre en emphase ce qu'on recherche
+    \item Faire un dessin
+    \begin{itemize}
+        \item Dessiner les forces
+    \end{itemize}
+    \item Choisir un repère de coordonnées adapté au problème (selon les symétries, pour faciliter la projection, euclidien ou non)
+    \item Poser les contraintes du système (qu'est-ce qui est constant?)
+    \item Exprimer les positions, vitesses, accelerations dans le repère
+    \item Exprimer les forces dans le repère
+    \begin{itemize}
+        \item Exprimer s'il y en a les forces d'inertie
+        \item Relire la donnée avant de résoudre
+    \end{itemize}
+    \item Poser la deuxième loi de newton
+    \begin{itemize}
+        \item Hypothèse d'échelle
+    \end{itemize}
+    \item Eventuellement, résoudre l'équation (si demandé par la donnée)
+\end{enumerate}
+
+\end{document}
