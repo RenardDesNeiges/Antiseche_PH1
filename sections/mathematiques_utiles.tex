@@ -1,0 +1,80 @@
+
+\begin{multicols}{2}
+
+    \subsection{Systèmes de coordonnées}
+    
+    \subsubsection*{Cylindriques}
+    On représente un point $\vec{M}$ par les trois coordonnées $\rho$, $\varphi$ and $z$:
+    \begin{align*}
+        \vec{M} = (\rho, \varphi, z).
+    \end{align*}
+    Les vecteurs unitaires sont représentés en base cartésienne comme:
+    \begin{align*}
+        \vec{e_\rho} = \begin{pmatrix} 
+            \cos \varphi \\
+            \sin \varphi \\
+            0
+        \end{pmatrix}, & 
+        \vec{e_\rho} = \begin{pmatrix} 
+            - \sin \varphi \\
+            \cos \varphi \\
+            0
+        \end{pmatrix}, & 
+        \vec{e_\rho} = \begin{pmatrix} 
+            0 \\
+            0 \\
+            1
+        \end{pmatrix}.
+    \end{align*}
+    On pose les coordonnées d'un point (et leur dérivées) comme suit: 
+    \begin{align*}
+        \vec{r} = \rho \vec{e_\rho} + z \vec{e_z}, \\
+        \vec{v} = \dot{\vec{r}} = \dot{\rho} \vec{e_\rho} + \rho \dot{\varphi} \vec{e_\varphi} + \dot{z} \vec{e_z}, \\
+        \vec{a} = \dot{\vec{v}} = \ddot{\vec{r}}, \\
+        \ddot{\vec{r}} = (\ddot{\rho} - \rho \dot{\phi}^2) \vec{e_\rho} + (\rho \ddot{\varphi} + 2 \dot{\rho} \dot{\varphi}) \vec{e_\varphi} + \ddot{z} \vec{e_z}.
+    \end{align*}
+    
+    \subsubsection*{Sphériques}
+    
+    On représente un point $\vec{M}$ par les trois coordonnées $r$, $\theta$ and $\varphi$:
+    \begin{align*}
+        \vec{M} = (r, \theta, \varphi).
+    \end{align*}
+    Les vecteurs unitaires sont représentés en base cartésienne comme:
+    \begin{align*}
+        \vec{e_r} = \begin{pmatrix} 
+            \sin \theta \cos \varphi  \\
+            \sin \theta \sin \varphi \\
+            \cos \theta
+        \end{pmatrix}, & 
+        \vec{e_\theta} = \begin{pmatrix} 
+            \cos \varphi \cos \varphi \\
+            \cos \varphi \sin \varphi \\
+            - \sin \theta
+        \end{pmatrix}, \\
+        \vec{e_\varphi} = \begin{pmatrix} 
+            -\sin \varphi \\
+            \cos \varphi \\
+            0
+        \end{pmatrix}.
+    \end{align*}
+    On pose les coordonnées d'un point (et leur dérivées) comme suit:
+    \begin{align*}
+        \vec{r} = r \vec{e_r}, \\
+        \vec{v} = \dot{\vec{r}} = \dot{r} \vec{e_r} + r \dot{\theta} \vec{e_\theta} + \sin \theta \vec{e_\varphi}, \\
+        \vec{a} = \dot{\vec{v}} = \ddot{\vec{r}}, \\
+        \ddot{\vec{r}} = (\ddot{r} - r \dot{\theta}^2 - r \dot{\varphi}^2 \sin^2 \theta) \vec{e_r}  \\
+        + (r \ddot{\theta} + 2 \dot{r} \dot{\theta} - r \dot{\varphi}^2 \sin \theta \cos \theta) \vec{e_\theta} \\
+        + (r \ddot{\varphi} \sin \theta + 2 \dot{r} \dot{\varphi}\sin\theta + 2 r \dot{\varphi} \dot{\theta} \cos \theta) \vec{e_\varphi}.
+    \end{align*}
+    
+    \subsection{Equations différentielles}
+    
+    En physique 1 on traite des équations différentielles linéaire du premier et du second ordre. \textbf{La résolution de ces équations revient à réécrire les équations du mouvement sous une forme dont on connait déjà la solution}. 
+    
+    
+    
+    \subsubsection*{Equations différentielles du premier ordre}
+    
+\end{multicols}
+    

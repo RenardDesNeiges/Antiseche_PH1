@@ -1,5 +1,7 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
+\usepackage{multicol}
 
+\usepackage{subfiles}
 \usepackage{sectsty}
 \usepackage{graphicx}
 \usepackage[T1]{fontenc}
@@ -10,6 +12,8 @@
 \usepackage[ruled,vlined]{algorithm2e} %algoritms/pseudocode
 
 \usepackage[french]{babel}
+
+
 
 %% Theorem notation
 \newtheorem{theorem}{Theorem}[section]
@@ -48,29 +52,15 @@
 \begin{document}
 \maketitle	
 
+\section{Marche à suivre}
+\subfile{sections/marche_a_suivre.tex}
+\newpage
 
-\section{Marche à suivre pour résoudre un exercice}
+\section{Lois Fondamentales}
+\subfile{sections/lois_fondamentales.tex}
+\newpage
 
-\begin{enumerate}
-    \item Lire la donnée (attentivement)
-    \item Mettre en emphase ce qu'on recherche
-    \item Faire un dessin
-    \begin{itemize}
-        \item Dessiner les forces
-    \end{itemize}
-    \item Choisir un repère de coordonnées adapté au problème (selon les symétries, pour faciliter la projection, galiléen ou non)
-    \item Poser les contraintes du système (qu'est-ce qui est constant?)
-    \item Exprimer les positions, vitesses, accelerations dans le repère
-    \item Exprimer les forces dans le repère
-    \begin{itemize}
-        \item Exprimer s'il y en a les forces d'inertie
-        \item Relire la donnée avant de résoudre
-    \end{itemize}
-    \item Poser la deuxième loi de newton ($\sum \vec{F}_\text{ext} = m \cdot \vec{a}$)
-    \begin{itemize}
-        \item Hypothèses d'échelle, regarder si on peut négliger qqch...
-    \end{itemize}
-    \item Eventuellement, résoudre l'équation (si demandé par la donnée)
-\end{enumerate}
+\section{Outils mathématiques}
+\subfile{sections/mathematiques_utiles.tex}
 
 \end{document}
