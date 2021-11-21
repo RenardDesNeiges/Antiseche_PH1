@@ -11,6 +11,16 @@
 \usepackage{amsthm} %theorems, proofs and lemmas
 \usepackage[ruled,vlined]{algorithm2e} %algoritms/pseudocode
 
+% Required packages
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning}
+
+\usepackage{relsize}
+
+\tikzset{fontscale/.style = {font=\relsize{#1}}
+    }
+
+
 \usepackage[french]{babel}
 
 
@@ -53,8 +63,11 @@
 \maketitle	
 
 \section{Marche à suivre}
-\subfile{sections/marche_a_suivre.tex}
+% \subfile{sections/marche_a_suivre.tex}
+\subfile{flowchart.tex}
 \newpage
+
+
 
 \section{Lois Fondamentales}
 \subfile{sections/lois_fondamentales.tex}
