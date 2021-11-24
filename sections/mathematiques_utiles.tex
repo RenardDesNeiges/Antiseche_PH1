@@ -415,3 +415,167 @@
         \hline
     \end{tabular}
 \end{center}
+
+\newpage
+
+\subsection*{Oscillateurs forcés}
+
+Dans un oscillateur forcé \textbf{la solution particulière n'est pas constante}, l'oscillateur se stabilise dans un régime permanent ou sa pulsation rejoint la pulsation d'excitation. L'amplitude de son oscillation ansi que son déphasage avec la force excitatrice sont fonction de la pulsation excitatrice et des paramètres de l'oscillateur. La solution homogène est la même que pour un oscillateur ammorti non entrainé.
+
+\begin{align*}
+    \text{Forme canonique : } && 
+    \overbrace{\ddot{x} + 2 \lambda \dot{x} + \omega_0^2 x}
+    ^\text{Equation diff. de l'oscillateur amorti}
+    = \overbrace{A_e \sin \left(\Omega t \right)}
+    ^\text{Force excitatrice} \\
+\end{align*}
+
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            legend pos = south east,
+            xmin = 0, xmax = 20,
+            ymin = -4, ymax = 4.0,
+            xtick distance = 3,
+            ytick distance = 2,
+            grid = both,
+            minor tick num = 1,
+            major grid style = {lightgray},
+            minor grid style = {lightgray!25},
+            width = 0.5\textwidth,
+            height = 0.3\textwidth]
+            \addplot[
+                domain = 0:30,
+                samples = 200,
+                smooth,
+                thick,
+                black,
+            ] {-4*exp(-0.3*x)*cos(200*x) };
+            \legend{$x_h(t)$ }
+        \end{axis}
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis}[
+            legend pos = south east,
+            xmin = 0, xmax = 20,
+            ymin = -4, ymax = 4.0,
+            xtick distance = 3,
+            ytick distance = 2,
+            grid = both,
+            minor tick num = 1,
+            major grid style = {lightgray},
+            minor grid style = {lightgray!25},
+            width = 0.5\textwidth,
+            height = 0.3\textwidth]
+            \addplot[
+                domain = 0:30,
+                samples = 200,
+                smooth,
+                thick,
+                blue,
+            ]  {cos(90*x + 1) };
+            \legend{$x_\text{part}(t)$ }
+        \end{axis}
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \begin{axis}[
+            legend pos = south east,
+            xmin = 0, xmax = 35,
+            ymin = -4, ymax = 4.0,
+            xtick distance = 3,
+            ytick distance = 2,
+            grid = both,
+            minor tick num = 1,
+            major grid style = {lightgray},
+            minor grid style = {lightgray!25},
+            width = 0.95\textwidth,
+            height = 0.3\textwidth]
+            \addplot[
+                domain = 0:30,
+                samples = 200,
+                smooth,
+                dashed,
+                black,
+            ] {-4*exp(-0.3*x)*cos(200*x) };
+            \addplot[
+                domain = 0:30,
+                samples = 200,
+                smooth,
+                dashed,
+                blue,
+            ]  {cos(90*x + 1) };
+            \addplot[
+                domain = 0:30,
+                samples = 200,
+                smooth,
+                thick,
+                red,
+            ] {-4*exp(-0.3*x)*cos(200*x) + cos(90*x + 1)};
+            \legend{$x_h(t)$,$x_\text{part}(t)$,$x(t)$}
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\subsubsection*{Solution particulière}
+
+\begin{align*}
+    \text{Forme de la sol. particulière : } && x_\text{part}(t)  = 
+    \overbrace{A(\Omega)}
+    ^\text{Amplitude}
+    \sin \left( \Omega t + \psi  \right) \\
+    \text{Amplitude :} &&
+    A(\Omega) = \frac{A_e}{\sqrt{(\Omega^2-\omega_0^2)^2 + 4 \lambda^2 \Omega^2}} \\
+    \text{Dephasage : } &&
+    \psi = \arctan \left( \frac{- 2 \lambda \Omega}{(\omega_0^2 - \Omega^2)} \right)
+\end{align*}
+
+
+% \begin{center}
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             legend pos = north east,
+%             xmin = 0, xmax = 4,
+%             ymin = -2, ymax = 15.0,
+%             xtick distance = 3,
+%             ytick distance = 2,
+%             grid = both,
+%             minor tick num = 1,
+%             major grid style = {lightgray},
+%             minor grid style = {lightgray!25},
+%             width = 0.5\textwidth,
+%             height = 0.3\textwidth]
+%             \addplot[
+%                 domain = 0:30,
+%                 samples = 200,
+%                 smooth,
+%                 thick,
+%                 black,
+%             ] {10/(sqrt((x^2-2^2)^2 + 4*0.05*x^2) )};
+%             \legend{$A(\Omega)$ }
+%         \end{axis}
+%     \end{tikzpicture}
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             legend pos = south east,
+%             xmin = 0, xmax = 20,
+%             ymin = -4, ymax = 4.0,
+%             xtick distance = 3,
+%             ytick distance = 2,
+%             grid = both,
+%             minor tick num = 1,
+%             major grid style = {lightgray},
+%             minor grid style = {lightgray!25},
+%             width = 0.5\textwidth,
+%             height = 0.3\textwidth]
+%             \addplot[
+%                 domain = 0:30,
+%                 samples = 200,
+%                 smooth,
+%                 thick,
+%                 blue,
+%             ]  {cos(90*x + 1) };
+%             \legend{$x_\text{part}(t)$ }
+%         \end{axis}
+%     \end{tikzpicture}
+% \end{center}
